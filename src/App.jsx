@@ -11,11 +11,16 @@ function App() {
     duration: 10,
   });
 
+  /*
+    The plus oparator ( +newValue ) fix the bug that calculatorInvestmentResults,
+    it cannot resolve with the concatination strings, therefore the calculated numbers
+    now are properly showed on the console.
+  */
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((prevUserInput) => {
       return {
         ...prevUserInput,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
       };
     });
   };
